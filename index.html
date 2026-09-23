@@ -11,8 +11,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://the3dprint.live/" />
   <meta name="theme-color" content="#0f172a" />
-  <link rel="icon" href="data:," />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -29,7 +29,7 @@
 <body>
   <header class="topbar">
     <div class="container nav">
-      <a class="logo" href="#"><span class="dot"></span>The 3D Print Live</a>
+      <a class="logo" href="/"><span class="dot"></span>The 3D Print Live</a>
       <nav>
         <a href="#services">Services</a>
         <a href="#process">Process</a>
@@ -89,6 +89,7 @@
     <section id="contact" class="container section contact">
       <h2>Get a Quote</h2>
       <p>Send project details below. You’ll get a response with options and pricing.</p>
+      <p id="quote-sent" class="notice" role="status" hidden>Thanks! Your quote request was sent. We’ll be in touch shortly.</p>
 
       <form class="quote-form" action="https://formsubmit.co/sean@the3dprint.live" method="POST">
         <input type="hidden" name="_subject" value="New Quote Request - The 3D Print Live" />
@@ -132,9 +133,9 @@
   </main>
 
   <footer class="footer">
-    <div class="container"><p>© <span id="year"></span> The 3D Print Live. Built for speed on Cloudflare Pages.</p></div>
+    <div class="container"><p>© <span id="year"></span> The 3D Print Live. All rights reserved.</p></div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html>

@@ -1,38 +1,57 @@
-# The 3D Print Live - Cloudflare Pages Site
+# The 3D Print Live — Website
 
-This version is optimized for speed + conversion and includes a live quote form.
+Static marketing site for [the3dprint.live](https://the3dprint.live): plain HTML/CSS/JS, no build step.
+The code lives on GitHub, and Vercel deploys it automatically on every push.
 
-## Deploy on Cloudflare Pages
+## Project structure
 
-1. Create a GitHub repo and push this `business-site` folder.
-2. Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect to Git.
-3. Select your repo.
-4. Build settings:
-   - Framework preset: **None**
-   - Build command: *(leave empty)*
-   - Build output directory: `/`
-5. Add custom domain: `the3dprint.live`
-6. Enable automatic deploys on new commits.
+| File | Purpose |
+| --- | --- |
+| `index.html` | Home page: services, process, use cases, quote form |
+| `styles.css` | All styling (mobile-first, dark theme) |
+| `script.js` | Footer year + "quote sent" confirmation |
+| `404.html` | Custom not-found page (Vercel serves it automatically) |
+| `favicon.svg` | Site icon |
+| `vercel.json` | Security headers, caching, clean URLs |
+| `robots.txt`, `sitemap.xml` | SEO basics |
 
-## Included optimization
+## Run locally
 
-- Fast static site (HTML/CSS/JS only)
-- SEO basics: canonical, meta tags, schema
-- `robots.txt` + `sitemap.xml`
-- Security/perf headers via `_headers`
-- Mobile-first layout
-- Conversion-focused CTA and quote form
+Any static server works:
 
-## Quote form setup
+```bash
+python3 -m http.server 8000
+# or: npx vercel dev
+```
 
-Form currently posts to FormSubmit:
-- Endpoint: `https://formsubmit.co/sean@the3dprint.live`
+Then open http://localhost:8000.
 
-After first submit, FormSubmit may email a verification link. Approve it once to activate submissions.
+## Deploy on Vercel (one-time setup)
 
-## Optional next upgrades
+1. Sign in at [vercel.com](https://vercel.com) with your GitHub account.
+2. **Add New… → Project**, then import `tigger29900/the3dprint-live-site`.
+3. Build settings:
+   - Framework Preset: **Other**
+   - Build Command: *(leave empty)*
+   - Output Directory: *(leave empty, so the repo root is used)*
+   - Install Command: *(leave empty)*
+4. Click **Deploy**. You'll get a `*.vercel.app` URL within seconds.
+5. **Settings → Domains**: add `the3dprint.live` (and `www.the3dprint.live`) and follow
+   Vercel's DNS instructions at your registrar. HTTPS is issued automatically.
 
-- Add logo and real project photos
-- Add testimonials/case studies
-- Replace FormSubmit with Cloudflare Functions + email webhook
-- Add analytics (Plausible/GA4 + Search Console)
+After that:
+- Every push to `main` goes to **production**.
+- Every other branch or pull request gets its own **preview URL**.
+
+## Quote form
+
+The form posts to [FormSubmit](https://formsubmit.co) → `sean@the3dprint.live`.
+The first time someone submits it, FormSubmit emails a verification link. Click it once to turn on delivery.
+After a submission, visitors come back to `/?quote=sent#contact` and see a confirmation message.
+
+## Ideas for later
+
+- Logo and real project photos / gallery
+- Testimonials and case studies
+- Swap FormSubmit for a Vercel Function + email service (e.g. Resend)
+- Analytics: Vercel Web Analytics (one click in the dashboard) + Google Search Console

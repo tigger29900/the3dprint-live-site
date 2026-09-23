@@ -82,3 +82,14 @@ textarea { resize: vertical; min-height: 120px; }
   nav { display: none; }
   .form-grid { grid-template-columns: 1fr; }
 }
+.notice {
+  background: rgba(34, 211, 238, .12);
+  border: 1px solid var(--brand);
+  border-radius: .75rem;
+  padding: .75rem 1rem;
+  color: #e0f2fe;
+}
+@media (max-width: 800px) {
+  nav { display: block; }
+  nav a:not(.btn) { display: none; }
+}
