@@ -7,13 +7,31 @@ The code lives on GitHub, and Vercel deploys it automatically on every push.
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Home page: services, process, use cases, quote form |
-| `styles.css` | All styling (mobile-first, dark theme) |
-| `script.js` | Footer year + "quote sent" confirmation |
+| `index.html` | Home page: hero, services, gallery, process, about, testimonials, FAQ, quote form |
+| `styles.css` | All styling. Brand colors and fonts are the variables at the top |
+| `script.js` | Mobile menu, footer year, "quote sent" confirmation |
+| `images/` | Logo and photos (currently **placeholders**, see below) |
 | `404.html` | Custom not-found page (Vercel serves it automatically) |
 | `favicon.svg` | Site icon |
 | `vercel.json` | Security headers, caching, clean URLs |
 | `robots.txt`, `sitemap.xml` | SEO basics |
+
+## Swapping in the real logo, photos, and brand
+
+Everything marked as a placeholder is designed to be replaced without touching the layout:
+
+| Placeholder | Replace with |
+| --- | --- |
+| `images/logo.svg` (+ `favicon.svg`) | Real logo. If it's a PNG, update the `src` in `index.html` and `404.html` |
+| `images/hero.svg` | Main photo (landscape, about 4:3) |
+| `images/about.svg` | Workshop or team photo (about 5:4) |
+| `images/gallery-1.svg` … `gallery-6.svg` | Project photos (square works best), and update the captions in `index.html` |
+| Testimonials section in `index.html` | Real customer reviews |
+
+Brand colors and fonts are the variables in the `:root` block at the top of `styles.css`
+(`--brand`, `--ink`, `--font-head`, …). Change them there and the whole site updates.
+
+Tip: export photos as `.jpg` or `.webp` at about 1600px wide max to keep the site fast.
 
 ## Run locally
 
@@ -47,11 +65,10 @@ After that:
 
 The form posts to [FormSubmit](https://formsubmit.co) → `sean@the3dprint.live`.
 The first time someone submits it, FormSubmit emails a verification link. Click it once to turn on delivery.
-After a submission, visitors come back to `/?quote=sent#contact` and see a confirmation message.
+The form also accepts an optional file attachment (STL, 3MF, STEP, or an image).
+After a submission, visitors come back to `/?quote=sent#quote` and see a confirmation message.
 
 ## Ideas for later
 
-- Logo and real project photos / gallery
-- Testimonials and case studies
 - Swap FormSubmit for a Vercel Function + email service (e.g. Resend)
 - Analytics: Vercel Web Analytics (one click in the dashboard) + Google Search Console

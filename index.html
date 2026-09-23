@@ -3,15 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The 3D Print Live | 3D Design, Printing & Prototyping</title>
-  <meta name="description" content="Custom 3D design, rapid prototyping, and professional 3D printing for businesses and creators. Fast quotes. Reliable turnaround." />
+  <title>The 3D Print Live | Custom 3D Printing, Design & Prototyping</title>
+  <meta name="description" content="Custom 3D printing, CAD design, and rapid prototyping for businesses and makers. Upload your idea, get a fast quote, and receive finished parts." />
   <link rel="canonical" href="https://the3dprint.live/" />
   <meta property="og:title" content="The 3D Print Live" />
-  <meta property="og:description" content="3D Design, Printing, and Prototyping Services." />
+  <meta property="og:description" content="Custom 3D printing, design, and prototyping. Fast quotes, reliable turnaround." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://the3dprint.live/" />
-  <meta name="theme-color" content="#0f172a" />
+  <meta property="og:image" content="https://the3dprint.live/images/hero.svg" />
+  <meta name="theme-color" content="#ff5a1f" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" />
   <link rel="stylesheet" href="/styles.css" />
   <script type="application/ld+json">
   {
@@ -19,121 +23,248 @@
     "@type": "LocalBusiness",
     "name": "The 3D Print Live",
     "url": "https://the3dprint.live/",
+    "logo": "https://the3dprint.live/images/logo.svg",
     "telephone": "+1-914-222-3475",
     "email": "sean@the3dprint.live",
-    "description": "3D design, printing, prototyping, post-processing, and batch production.",
+    "description": "Custom 3D printing, CAD design, rapid prototyping, finishing, and small-batch production.",
     "areaServed": "US"
   }
   </script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container nav">
-      <a class="logo" href="/"><span class="dot"></span>The 3D Print Live</a>
-      <nav>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="The 3D Print Live home">
+        <img src="/images/logo.svg" alt="" width="40" height="40" />
+        <span>The 3D Print <strong>Live</strong></span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Menu</span><span class="bars" aria-hidden="true"></span>
+      </button>
+      <nav id="site-nav" class="nav">
         <a href="#services">Services</a>
-        <a href="#process">Process</a>
-        <a href="#portfolio">Use Cases</a>
-        <a href="#contact" class="btn btn-sm">Get Quote</a>
+        <a href="#work">Our Work</a>
+        <a href="#process">How It Works</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#quote" class="btn btn-primary btn-sm">Get a Quote</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero container">
-      <p class="eyebrow">Custom 3D Solutions for Businesses & Creators</p>
-      <h1>From idea to finished part—fast, clean, and production-ready</h1>
-      <p class="lead">We help you design, prototype, and produce reliable 3D parts for products, tools, enclosures, and custom projects.</p>
-      <div class="cta-row">
-        <a href="#contact" class="btn">Request a Quote</a>
-        <a href="tel:+19142223475" class="btn btn-ghost">Call +1 (914) 222-3475</a>
-      </div>
-      <ul class="trust">
-        <li>Fast turnaround</li>
-        <li>File repair + CAD support</li>
-        <li>Consistent business quality</li>
-      </ul>
-    </section>
-
-    <section id="services" class="container section">
-      <h2>Services</h2>
-      <div class="grid">
-        <article class="card"><h3>3D Design & Modeling</h3><p>Custom CAD, concept development, and STL/OBJ/STEP optimization and repair.</p></article>
-        <article class="card"><h3>3D Printing</h3><p>FDM-based production for prototypes, end-use parts, fixtures, and custom builds.</p></article>
-        <article class="card"><h3>Product Prototyping</h3><p>Rapid iteration with fit checks and function validation before production.</p></article>
-        <article class="card"><h3>Post-Processing</h3><p>Support removal, finishing, painting, and clean presentation-ready output.</p></article>
-        <article class="card"><h3>Batch Production</h3><p>Low-volume runs with repeatable quality for startups and growing brands.</p></article>
-        <article class="card"><h3>Custom Orders</h3><p>Specialized one-off work for unique parts, gifts, education kits, and branded items.</p></article>
-      </div>
-    </section>
-
-    <section id="process" class="container section">
-      <h2>Simple Process</h2>
-      <ol class="steps">
-        <li><strong>1) Share your project</strong> — files, sketches, or photos.</li>
-        <li><strong>2) Receive quote</strong> — timeline, material options, pricing.</li>
-        <li><strong>3) Prototype/build</strong> — iterate until it meets your needs.</li>
-        <li><strong>4) Deliver</strong> — final parts ready for testing or production use.</li>
-      </ol>
-    </section>
-
-    <section id="portfolio" class="container section">
-      <h2>Common Use Cases</h2>
-      <div class="grid">
-        <article class="card"><h3>Product Enclosures</h3><p>Custom housings and mounts for electronics and prototypes.</p></article>
-        <article class="card"><h3>Replacement Parts</h3><p>Reverse engineered and custom-fit components for legacy or broken parts.</p></article>
-        <article class="card"><h3>Marketing & Displays</h3><p>Branded physical pieces, demos, and retail display components.</p></article>
-      </div>
-    </section>
-
-    <section id="contact" class="container section contact">
-      <h2>Get a Quote</h2>
-      <p>Send project details below. You’ll get a response with options and pricing.</p>
-      <p id="quote-sent" class="notice" role="status" hidden>Thanks! Your quote request was sent. We’ll be in touch shortly.</p>
-
-      <form class="quote-form" action="https://formsubmit.co/sean@the3dprint.live" method="POST">
-        <input type="hidden" name="_subject" value="New Quote Request - The 3D Print Live" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_next" value="https://the3dprint.live/?quote=sent#contact" />
-
-        <div class="form-grid">
-          <label>Full Name<input required type="text" name="name" placeholder="Your name" /></label>
-          <label>Email<input required type="email" name="email" placeholder="you@company.com" /></label>
-          <label>Phone<input type="tel" name="phone" placeholder="(optional)" /></label>
-          <label>Needed By<input type="text" name="deadline" placeholder="e.g. 2 weeks" /></label>
-          <label>Project Type
-            <select name="project_type">
-              <option>Prototype</option>
-              <option>Production Run</option>
-              <option>Custom One-Off</option>
-              <option>File Repair / CAD</option>
-            </select>
-          </label>
-          <label>Budget Range
-            <select name="budget_range">
-              <option>Under $100</option>
-              <option>$100-$500</option>
-              <option>$500-$2,000</option>
-              <option>$2,000+</option>
-            </select>
-          </label>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">3D Printing · Design · Prototyping</p>
+          <h1>Bring your ideas to life, <span class="accent">layer by layer.</span></h1>
+          <p class="lead">From a rough sketch to a finished part, we design, print, and finish custom 3D pieces for businesses, inventors, and makers.</p>
+          <div class="cta-row">
+            <a href="#quote" class="btn btn-primary">Start Your Project</a>
+            <a href="#work" class="btn btn-outline">See Our Work</a>
+          </div>
+          <ul class="stats">
+            <li><strong>24–72h</strong><span>typical turnaround</span></li>
+            <li><strong>CAD</strong><span>design &amp; file repair</span></li>
+            <li><strong>1–500+</strong><span>parts per order</span></li>
+          </ul>
         </div>
-        <label>Project Details
-          <textarea required name="details" rows="5" placeholder="What are you trying to build? Size, quantity, material preference, use case..."></textarea>
-        </label>
-        <button class="btn" type="submit">Send Quote Request</button>
-      </form>
+        <figure class="hero-media">
+          <img src="/images/hero.svg" alt="3D printer producing a custom part" width="1200" height="900" />
+        </figure>
+      </div>
+    </section>
 
-      <div class="contact-box">
-        <a class="btn btn-ghost" href="mailto:sean@the3dprint.live">Email Directly</a>
-        <a class="btn btn-ghost" href="tel:+19142223475">Call +1 (914) 222-3475</a>
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">What we do</p>
+          <h2>Everything from concept to finished part</h2>
+        </header>
+        <div class="cards">
+          <article class="card">
+            <div class="icon" aria-hidden="true">✏️</div>
+            <h3>3D Design &amp; CAD</h3>
+            <p>No file? No problem. We turn sketches, photos, and ideas into print-ready models, and repair broken STL/OBJ/STEP files.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">🖨️</div>
+            <h3>Custom 3D Printing</h3>
+            <p>Strong, accurate parts in PLA, PETG, ABS, TPU and more, for prototypes, fixtures, and end-use parts.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">⚙️</div>
+            <h3>Rapid Prototyping</h3>
+            <p>Iterate fast. Check fit, form, and function before you commit to tooling or production.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">🎨</div>
+            <h3>Finishing</h3>
+            <p>Support removal, sanding, priming, and painting for a clean, presentation-ready result.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">📦</div>
+            <h3>Small-Batch Production</h3>
+            <p>Consistent, repeatable runs for startups, Etsy shops, and growing brands.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">🔧</div>
+            <h3>Replacement Parts</h3>
+            <p>Broken clip, discontinued knob, missing bracket? We measure, model, and reprint it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="work" class="section section-alt">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Our work</p>
+          <h2>Recent projects</h2>
+          <p>A few examples of what we've designed and printed for customers.</p>
+        </header>
+        <div class="gallery">
+          <figure><img src="/images/gallery-1.svg" alt="Custom electronics enclosure" loading="lazy" width="800" height="800" /><figcaption>Electronics enclosure</figcaption></figure>
+          <figure><img src="/images/gallery-2.svg" alt="Reverse-engineered replacement part" loading="lazy" width="800" height="800" /><figcaption>Replacement part</figcaption></figure>
+          <figure><img src="/images/gallery-3.svg" alt="Functional product prototype" loading="lazy" width="800" height="800" /><figcaption>Product prototype</figcaption></figure>
+          <figure><img src="/images/gallery-4.svg" alt="Branded retail display piece" loading="lazy" width="800" height="800" /><figcaption>Retail display</figcaption></figure>
+          <figure><img src="/images/gallery-5.svg" alt="Small-batch production run" loading="lazy" width="800" height="800" /><figcaption>Batch production</figcaption></figure>
+          <figure><img src="/images/gallery-6.svg" alt="Custom one-off gift print" loading="lazy" width="800" height="800" /><figcaption>Custom one-off</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="section">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>Four simple steps</h2>
+        </header>
+        <ol class="steps">
+          <li><span class="num">1</span><h3>Share your idea</h3><p>Send a file, sketch, photo, or just a description.</p></li>
+          <li><span class="num">2</span><h3>Get a quote</h3><p>We reply with material options, timeline, and pricing.</p></li>
+          <li><span class="num">3</span><h3>We design &amp; print</h3><p>We model it if needed, then print and check the quality.</p></li>
+          <li><span class="num">4</span><h3>Pick up or ship</h3><p>Your finished parts arrive ready to use.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section section-alt">
+      <div class="container about-grid">
+        <figure class="about-media">
+          <img src="/images/about.svg" alt="The 3D Print Live workshop" loading="lazy" width="1000" height="800" />
+        </figure>
+        <div>
+          <p class="eyebrow">About us</p>
+          <h2>Local, hands-on, and focused on getting it right</h2>
+          <p>The 3D Print Live is a custom 3D printing and design studio. We work directly with you, so you always know who is handling your project, and we don't call a part done until it fits and works.</p>
+          <ul class="checks">
+            <li>Direct communication, no middlemen</li>
+            <li>Help choosing the right material for the job</li>
+            <li>Honest pricing and realistic timelines</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Testimonials</p>
+          <h2>What customers say</h2>
+        </header>
+        <div class="cards quotes">
+          <blockquote class="card"><p>"Placeholder: add a real customer review here."</p><footer>Customer name, Company</footer></blockquote>
+          <blockquote class="card"><p>"Placeholder: add a real customer review here."</p><footer>Customer name, Company</footer></blockquote>
+          <blockquote class="card"><p>"Placeholder: add a real customer review here."</p><footer>Customer name, Company</footer></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section section-alt">
+      <div class="container narrow">
+        <header class="section-head">
+          <p class="eyebrow">FAQ</p>
+          <h2>Common questions</h2>
+        </header>
+        <details><summary>What file types do you accept?</summary><p>STL, OBJ, 3MF, and STEP are ideal. Don't have a file? Send a sketch, photos, or measurements and we can design it for you.</p></details>
+        <details><summary>How much does a print cost?</summary><p>It depends on size, material, quantity, and finishing. Send your project through the quote form and we'll give you a clear price up front.</p></details>
+        <details><summary>How long does it take?</summary><p>Most small jobs are ready in 1–3 business days. Larger runs or design work may take longer; we'll give you a timeline with your quote.</p></details>
+        <details><summary>What materials are available?</summary><p>Common options include PLA, PETG, ABS, and flexible TPU. We'll recommend the best fit for strength, heat, or flexibility needs.</p></details>
+        <details><summary>Do you ship?</summary><p>Yes. We ship across the US, and local pickup can be arranged.</p></details>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section id="quote" class="section quote">
+      <div class="container quote-grid">
+        <div class="quote-intro">
+          <p class="eyebrow">Get a quote</p>
+          <h2>Tell us about your project</h2>
+          <p>Share a few details and we'll get back to you with options and pricing, usually within one business day.</p>
+          <ul class="contact-list">
+            <li><a href="tel:+19142223475">📞 +1 (914) 222-3475</a></li>
+            <li><a href="mailto:sean@the3dprint.live">✉️ sean@the3dprint.live</a></li>
+          </ul>
+        </div>
+
+        <form class="quote-form" action="https://formsubmit.co/sean@the3dprint.live" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_subject" value="New Quote Request - The 3D Print Live" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://the3dprint.live/?quote=sent#quote" />
+          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <p id="quote-sent" class="notice" role="status" hidden>Thanks! Your request was sent. We'll be in touch shortly.</p>
+
+          <div class="form-grid">
+            <label>Name<input required type="text" name="name" autocomplete="name" /></label>
+            <label>Email<input required type="email" name="email" autocomplete="email" /></label>
+            <label>Phone <em>(optional)</em><input type="tel" name="phone" autocomplete="tel" /></label>
+            <label>Needed by <em>(optional)</em><input type="text" name="deadline" placeholder="e.g. 2 weeks" /></label>
+            <label>Project type
+              <select name="project_type">
+                <option>Prototype</option>
+                <option>Replacement part</option>
+                <option>Production run</option>
+                <option>Custom one-off</option>
+                <option>Design / file repair</option>
+              </select>
+            </label>
+            <label>Quantity<input type="number" name="quantity" min="1" value="1" /></label>
+          </div>
+          <label>Project details
+            <textarea required name="details" rows="5" placeholder="What are you making? Size, material, use case, anything we should know."></textarea>
+          </label>
+          <label>Attach a file <em>(optional: STL, 3MF, STEP, image)</em>
+            <input type="file" name="attachment" accept=".stl,.obj,.3mf,.step,.stp,image/*" />
+          </label>
+          <button class="btn btn-primary btn-block" type="submit">Send Quote Request</button>
+        </form>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container"><p>© <span id="year"></span> The 3D Print Live. All rights reserved.</p></div>
+    <div class="container footer-inner">
+      <a class="brand" href="/"><img src="/images/logo.svg" alt="" width="32" height="32" /><span>The 3D Print <strong>Live</strong></span></a>
+      <nav class="footer-nav">
+        <a href="#services">Services</a>
+        <a href="#work">Our Work</a>
+        <a href="#faq">FAQ</a>
+        <a href="#quote">Get a Quote</a>
+      </nav>
+      <p>© <span id="year"></span> The 3D Print Live. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="/script.js"></script>
