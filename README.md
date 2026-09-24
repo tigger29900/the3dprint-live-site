@@ -18,14 +18,15 @@ The code lives on GitHub, and Vercel deploys it automatically on every push.
 
 ## Swapping in the real logo, photos, and brand
 
-Everything marked as a placeholder is designed to be replaced without touching the layout:
+The hero and gallery use real project photos (`images/*.jpg`). To add or swap one, drop a
+portrait (3:4) photo into `images/` and add a `<figure>` in the gallery section of `index.html`.
+
+Everything still marked as a placeholder is designed to be replaced without touching the layout:
 
 | Placeholder | Replace with |
 | --- | --- |
 | `images/logo.svg` (+ `favicon.svg`) | Real logo. If it's a PNG, update the `src` in `index.html` and `404.html` |
-| `images/hero.svg` | Main photo (landscape, about 4:3) |
 | `images/about.svg` | Workshop or team photo (about 5:4) |
-| `images/gallery-1.svg` … `gallery-6.svg` | Project photos (square works best), and update the captions in `index.html` |
 | Testimonials section in `index.html` | Real customer reviews |
 
 Brand colors and fonts are the variables in the `:root` block at the top of `styles.css`
