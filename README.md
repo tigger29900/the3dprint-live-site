@@ -18,14 +18,15 @@ The code lives on GitHub, and Vercel deploys it automatically on every push.
 
 ## Swapping in the real logo, photos, and brand
 
-Everything marked as a placeholder is designed to be replaced without touching the layout:
+The hero and gallery use real project photos (`images/*.jpg`). To add or swap one, drop a
+portrait (3:4) photo into `images/` and add a `<figure>` in the gallery section of `index.html`.
+
+Everything still marked as a placeholder is designed to be replaced without touching the layout:
 
 | Placeholder | Replace with |
 | --- | --- |
 | `images/logo.svg` (+ `favicon.svg`) | Real logo. If it's a PNG, update the `src` in `index.html` and `404.html` |
-| `images/hero.svg` | Main photo (landscape, about 4:3) |
 | `images/about.svg` | Workshop or team photo (about 5:4) |
-| `images/gallery-1.svg` … `gallery-6.svg` | Project photos (square works best), and update the captions in `index.html` |
 | Testimonials section in `index.html` | Real customer reviews |
 
 Brand colors and fonts are the variables in the `:root` block at the top of `styles.css`
@@ -65,7 +66,10 @@ After that:
 
 The form posts to [FormSubmit](https://formsubmit.co) → `sean@the3dprint.live`.
 The first time someone submits it, FormSubmit emails a verification link. Click it once to turn on delivery.
-The form also accepts an optional file attachment (STL, 3MF, STEP, or an image).
+The form sends in the background and shows a success or error message right on the page
+(including FormSubmit's own messages, e.g. "This form needs Activation"). If a file is
+attached (STL, 3MF, STEP, or an image), it does a regular page submit instead so the file
+uploads, then returns the visitor to the page.
 After a submission, visitors come back to `/?quote=sent#quote` and see a confirmation message.
 
 ## Ideas for later

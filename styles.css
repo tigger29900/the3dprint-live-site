@@ -107,9 +107,9 @@ p { margin: 0 0 1rem; }
 .icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px; background: var(--brand-soft); font-size: 1.4rem; margin-bottom: 1rem; }
 
 /* Gallery */
-.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
 .gallery figure { margin: 0; position: relative; overflow: hidden; border-radius: var(--radius); }
-.gallery img { width: 100%; aspect-ratio: 1; object-fit: cover; transition: transform .4s; }
+.gallery img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; transition: transform .4s; }
 .gallery figure:hover img { transform: scale(1.04); }
 .gallery figcaption {
   position: absolute; left: 0; right: 0; bottom: 0; padding: 2rem 1rem .9rem;
@@ -201,3 +201,4 @@ textarea { resize: vertical; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+.notice-error { background: #fef2f2; border-color: #ef4444; color: #991b1b; }
