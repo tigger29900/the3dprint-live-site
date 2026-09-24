@@ -66,7 +66,10 @@ After that:
 
 The form posts to [FormSubmit](https://formsubmit.co) → `sean@the3dprint.live`.
 The first time someone submits it, FormSubmit emails a verification link. Click it once to turn on delivery.
-The form also accepts an optional file attachment (STL, 3MF, STEP, or an image).
+The form sends in the background and shows a success or error message right on the page
+(including FormSubmit's own messages, e.g. "This form needs Activation"). If a file is
+attached (STL, 3MF, STEP, or an image), it does a regular page submit instead so the file
+uploads, then returns the visitor to the page.
 After a submission, visitors come back to `/?quote=sent#quote` and see a confirmation message.
 
 ## Ideas for later

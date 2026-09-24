@@ -215,14 +215,14 @@
           </ul>
         </div>
 
-        <form class="quote-form" action="https://formsubmit.co/sean@the3dprint.live" method="POST" enctype="multipart/form-data">
+        <form id="quote-form" class="quote-form" action="https://formsubmit.co/sean@the3dprint.live" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="_subject" value="New Quote Request - The 3D Print Live" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_next" value="https://the3dprint.live/?quote=sent#quote" />
           <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
-          <p id="quote-sent" class="notice" role="status" hidden>Thanks! Your request was sent. We'll be in touch shortly.</p>
+          <p id="form-status" class="notice" role="status" aria-live="polite" hidden></p>
 
           <div class="form-grid">
             <label>Name<input required type="text" name="name" autocomplete="name" /></label>
@@ -246,7 +246,7 @@
           <label>Attach a file <em>(optional: STL, 3MF, STEP, image)</em>
             <input type="file" name="attachment" accept=".stl,.obj,.3mf,.step,.stp,image/*" />
           </label>
-          <button class="btn btn-primary btn-block" type="submit">Send Quote Request</button>
+          <button id="quote-submit" class="btn btn-primary btn-block" type="submit">Send Quote Request</button>
         </form>
       </div>
     </section>
