@@ -20,6 +20,14 @@ function isAllowedOrigin(origin) {
 
 export default {
   async fetch(request) {
+    if (request.method === 'GET') {
+      // Health check: reports whether storage credentials are configured (never their values).
+      return Response.json({
+        ok: true,
+        blobTokenConfigured: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
+        blobStoreIdConfigured: Boolean(process.env.BLOB_STORE_ID),
+      });
+    }
     if (request.method !== 'POST') {
       return Response.json({ error: 'Method not allowed' }, { status: 405 });
     }
@@ -46,6 +54,7 @@ export default {
       });
       return Response.json(result);
     } catch (error) {
+      console.error('upload token error:', error);
       return Response.json({ error: error.message }, { status: 400 });
     }
   },
