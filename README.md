@@ -80,8 +80,12 @@ quote email then includes a download link for each file in the `files` field.
   Regenerate after upgrading `@vercel/blob` with `npm install && npm run vendor:blob`.
 - Requires a Blob store connected to the Vercel project (**Storage → Blob**), which sets the
   `BLOB_READ_WRITE_TOKEN` environment variable automatically.
-- Uploaded files stay in the Blob store until you delete them (Vercel dashboard →
-  Storage → your store → Browser).
+- **Auto-cleanup:** `api/cleanup-uploads.js` runs daily at 09:00 UTC (Vercel Cron, set in
+  `vercel.json`) and deletes files under `quotes/` older than **30 days**, so download links
+  in older quote emails stop working after that. Only Vercel Cron can trigger it: it
+  requires the `CRON_SECRET` environment variable (Production, Sensitive). Runs show up in
+  Vercel → project → Settings → Cron Jobs, and in the runtime logs as
+  `cleanup-uploads: checked N, deleted M`.
 
 ## Ideas for later
 
