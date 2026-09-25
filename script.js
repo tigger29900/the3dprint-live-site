@@ -91,8 +91,10 @@ form.addEventListener('submit', async (e) => {
     if (files.length) {
       try {
         data.set('files', (await uploadFiles(files)).join('\n'));
-      } catch {
-        showStatus(`Sorry, your file couldn't be uploaded. ${FALLBACK}`, true);
+      } catch (err) {
+        console.error('File upload failed:', err);
+        const reason = err && err.name === 'AbortError' ? 'upload timed out' : (err && err.message) || 'unknown error';
+        showStatus(`Sorry, your file couldn't be uploaded (${reason}). ${FALLBACK}`, true);
         return;
       }
       submitBtn.textContent = 'Sending…';
