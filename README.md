@@ -64,13 +64,24 @@ After that:
 
 ## Quote form
 
-The form posts to [FormSubmit](https://formsubmit.co) → `sean@the3dprint.live`.
-The first time someone submits it, FormSubmit emails a verification link. Click it once to turn on delivery.
-The form sends in the background and shows a success or error message right on the page
-(including FormSubmit's own messages, e.g. "This form needs Activation"). If a file is
-attached (STL, 3MF, STEP, or an image), it does a regular page submit instead so the file
-uploads, then returns the visitor to the page.
-After a submission, visitors come back to `/?quote=sent#quote` and see a confirmation message.
+The form posts to [FormSubmit](https://formsubmit.co), which emails `sean@the3dprint.live`.
+It sends in the background and shows a success or error message on the page.
+
+**File uploads** (STL, 3MF, STEP, OBJ, images, PDF; up to 100 MB each, multiple allowed) go
+directly from the visitor's browser to **Vercel Blob** storage, not through FormSubmit. The
+quote email then includes a download link for each file in the `files` field.
+
+- `api/upload.js`: Vercel Function that issues short-lived upload tokens. It only accepts
+  requests from the site's own domains, only allows the file types above, stores everything
+  under `quotes/` as a download (`application/octet-stream`), and adds a random suffix to
+  each file name so links can't be guessed.
+- `vendor/vercel-blob-client.js`: the `@vercel/blob` browser upload client, bundled so no
+  third-party script is loaded. It's only downloaded when someone attaches a file.
+  Regenerate after upgrading `@vercel/blob` with `npm install && npm run vendor:blob`.
+- Requires a Blob store connected to the Vercel project (**Storage → Blob**), which sets the
+  `BLOB_READ_WRITE_TOKEN` environment variable automatically.
+- Uploaded files stay in the Blob store until you delete them (Vercel dashboard →
+  Storage → your store → Browser).
 
 ## Ideas for later
 
