@@ -35,28 +35,81 @@ if (new URLSearchParams(window.location.search).get('quote') === 'sent') {
   showStatus("Thanks! Your request was sent. We'll be in touch shortly.");
 }
 
-form.addEventListener('submit', async (e) => {
-  // File uploads go through FormSubmit's regular endpoint (full page submit).
-  const file = form.elements.attachment.files[0];
-  if (file) return;
+const ALLOWED_FILE = /\.(stl|3mf|obj|step|stp|pdf|jpe?g|png|webp|heic|gif)$/i;
+const MAX_FILE_BYTES = 100 * 1024 * 1024;
 
+// Upload attachments to Vercel Blob (via /api/upload) and return their download links.
+async function uploadFiles(files) {
+  const { upload } = await import('/vendor/vercel-blob-client.js');
+  const links = [];
+  for (const [i, file] of files.entries()) {
+    const safeName = file.name.replace(/[^\w.-]+/g, '-');
+    // Give up if the upload stalls (no progress for 30s) instead of retrying for minutes.
+    const controller = new AbortController();
+    let stallTimer = setTimeout(() => controller.abort(), 30000);
+    let lastPercent = -1;
+    try {
+      const blob = await upload(`quotes/${safeName}`, file, {
+        access: 'public',
+        handleUploadUrl: '/api/upload',
+        contentType: 'application/octet-stream',
+        multipart: file.size > 20 * 1024 * 1024,
+        abortSignal: controller.signal,
+        onUploadProgress: ({ percentage }) => {
+          if (percentage > lastPercent) {
+            lastPercent = percentage;
+            clearTimeout(stallTimer);
+            stallTimer = setTimeout(() => controller.abort(), 30000);
+          }
+          submitBtn.textContent = `Uploading file ${i + 1} of ${files.length}… ${Math.round(percentage)}%`;
+        },
+      });
+      links.push(`${file.name}: ${blob.url}`);
+    } finally {
+      clearTimeout(stallTimer);
+    }
+  }
+  return links;
+}
+
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
+
+  const files = [...form.elements.attachment.files];
+  const badFile = files.find((f) => !ALLOWED_FILE.test(f.name) || f.size > MAX_FILE_BYTES);
+  if (badFile) {
+    showStatus(`"${badFile.name}" can't be uploaded. Files must be STL, 3MF, STEP, OBJ, an image or PDF, and under 100 MB.`, true);
+    return;
+  }
+
   submitBtn.disabled = true;
   submitBtn.textContent = 'Sending…';
 
   try {
+    const data = new FormData(form);
+    data.delete('attachment');
+    if (files.length) {
+      try {
+        data.set('files', (await uploadFiles(files)).join('\n'));
+      } catch {
+        showStatus(`Sorry, your file couldn't be uploaded. ${FALLBACK}`, true);
+        return;
+      }
+      submitBtn.textContent = 'Sending…';
+    }
+
     const res = await fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
       method: 'POST',
       headers: { Accept: 'application/json' },
-      body: new FormData(form),
+      body: data,
     });
-    const data = await res.json().catch(() => ({}));
-    if (res.ok && String(data.success) === 'true') {
+    const result = await res.json().catch(() => ({}));
+    if (res.ok && String(result.success) === 'true') {
       form.reset();
       form.elements._next.value = `${window.location.origin}/?quote=sent#quote`;
       showStatus("Thanks! Your request was sent. We'll be in touch shortly.");
     } else {
-      showStatus(`Sorry, your request couldn't be sent${data.message ? `: ${data.message}` : '.'} ${FALLBACK}`, true);
+      showStatus(`Sorry, your request couldn't be sent${result.message ? `: ${result.message}` : '.'} ${FALLBACK}`, true);
     }
   } catch {
     showStatus(`Sorry, we couldn't reach the form service. ${FALLBACK}`, true);

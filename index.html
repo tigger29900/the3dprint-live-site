@@ -243,9 +243,10 @@
           <label>Project details
             <textarea required name="details" rows="5" placeholder="What are you making? Size, material, use case, anything we should know."></textarea>
           </label>
-          <label>Attach a file <em>(optional: STL, 3MF, STEP, image)</em>
-            <input type="file" name="attachment" accept=".stl,.obj,.3mf,.step,.stp,image/*" />
+          <label>Attach files <em>(optional: STL, 3MF, STEP, OBJ, images or PDF, up to 100 MB each)</em>
+            <input type="file" name="attachment" multiple accept=".stl,.3mf,.obj,.step,.stp,.pdf,.jpg,.jpeg,.png,.webp,.heic,.gif" />
           </label>
+          <input type="hidden" name="files" value="" />
           <button id="quote-submit" class="btn btn-primary btn-block" type="submit">Send Quote Request</button>
         </form>
       </div>

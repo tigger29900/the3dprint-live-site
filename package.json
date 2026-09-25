@@ -1,0 +1,14 @@
+{
+  "name": "the3dprint-live-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "vendor:blob": "echo \"export { upload } from '@vercel/blob/client';\" | esbuild --bundle --format=esm --minify --platform=browser --target=es2020 --outfile=vendor/vercel-blob-client.js"
+  },
+  "dependencies": {
+    "@vercel/blob": "2.8.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}
