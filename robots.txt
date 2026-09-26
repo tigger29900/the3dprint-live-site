@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /api/
 
-Sitemap: https://the3dprint.live/sitemap.xml
+Sitemap: https://www.the3dprint.live/sitemap.xml
