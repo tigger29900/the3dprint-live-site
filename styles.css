@@ -136,7 +136,7 @@ p { margin: 0 0 1rem; }
 .icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px; background: var(--brand-soft); font-size: 1.4rem; margin-bottom: 1rem; }
 
 /* Gallery */
-.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .gallery figure { margin: 0; position: relative; overflow: hidden; border-radius: var(--radius); }
 .gallery img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; transition: transform .4s; }
 .gallery figure:hover img { transform: scale(1.04); }
@@ -211,7 +211,6 @@ textarea { resize: vertical; }
 /* Responsive --------------------------------------------------------------- */
 @media (max-width: 960px) {
   .steps { grid-template-columns: repeat(2, 1fr); }
-  .gallery { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 860px) {
   .menu-toggle { display: block; }
@@ -227,6 +226,9 @@ textarea { resize: vertical; }
   .hero-grid, .about-grid, .quote-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
+  .gallery { grid-template-columns: 1fr; }
+  .gallery img { aspect-ratio: 4 / 3; }
+  .gallery img.focus-top { object-position: 50% 15%; }
   .form-grid, .steps, .quotes { grid-template-columns: 1fr; }
   .stats { gap: 1.3rem; }
 }
