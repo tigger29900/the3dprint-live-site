@@ -3,7 +3,36 @@
   <url>
     <loc>https://www.the3dprint.live/</loc>
     <lastmod>2026-09-26</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.the3dprint.live/services/replacement-parts</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.the3dprint.live/services/prototyping</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.the3dprint.live/services/architectural-models</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.the3dprint.live/services/custom-gifts-events</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.the3dprint.live/services/3d-scanning</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.the3dprint.live/projects/large-format-sculpture</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>

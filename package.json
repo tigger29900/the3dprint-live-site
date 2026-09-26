@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build:pages": "node scripts/build-pages.mjs",
     "vendor:blob": "echo \"export { upload } from '@vercel/blob/client';\" | esbuild --bundle --format=esm --minify --platform=browser --target=es2020 --outfile=vendor/vercel-blob-client.js"
   },
   "dependencies": {
