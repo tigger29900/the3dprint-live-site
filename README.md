@@ -9,12 +9,30 @@ The code lives on GitHub, and Vercel deploys it automatically on every push.
 | --- | --- |
 | `index.html` | Home page: hero, services, gallery, process, about, testimonials, FAQ, quote form |
 | `styles.css` | All styling. Brand colors and fonts are the variables at the top |
-| `script.js` | Mobile menu, footer year, "quote sent" confirmation |
+| `script.js` | Mobile menu, footer year, quote form (uploads, project-type preselect, redirect to `/thank-you`) |
 | `images/` | Project photos, `images/brand/` logos |
 | `404.html` | Custom not-found page (Vercel serves it automatically) |
 | `favicon.svg` | Site icon |
 | `vercel.json` | Security headers, caching, clean URLs |
 | `robots.txt`, `sitemap.xml` | SEO basics |
+
+## Pages
+
+| URL | File | Source |
+| --- | --- | --- |
+| `/` | `index.html` | hand-written (header/footer synced by the generator) |
+| `/services/replacement-parts`, `/services/prototyping`, `/services/architectural-models`, `/services/custom-gifts-events`, `/services/3d-scanning` | `services/*.html` | generated |
+| `/projects/large-format-sculpture` | `projects/large-format-sculpture.html` | generated (case study) |
+| `/thank-you` | `thank-you.html` | generated; `noindex`; where the quote form lands after a successful send, so Web Analytics counts it as a conversion |
+
+**To edit the service pages, case study, header, or footer:** change the content in
+`scripts/build-pages.mjs`, then run `npm run build:pages` and commit the result. The script
+rewrites the generated pages, syncs the header/footer/mobile contact bar into `index.html`
+(between the `build:header` / `build:footer` markers), and regenerates `sitemap.xml`.
+Vercel serves the committed files directly; there is no deploy-time build.
+
+Service pages link to the quote form with `/?type=<project type>#quote`, which pre-selects
+the project type.
 
 ## Branding
 
@@ -31,7 +49,7 @@ kept in the repo for reference but excluded from deployments via `.vercelignore`
   Blue means "already built" and apricot means "printing now".
 - **Font:** Nunito, self-hosted from `fonts/` (SIL Open Font License, `fonts/OFL.txt`); no
   Google Fonts request.
-- **Tagline:** "Building your idea one layer at a time." (website only, never inside the logo)
+- **Tagline:** "Building Your Idea One Layer At A Time" (title case) (website only, never inside the logo)
 
 Real project photos are in `images/*.jpg`; customer testimonials are in the Testimonials section of `index.html`.
 
