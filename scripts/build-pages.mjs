@@ -443,7 +443,7 @@ const PAGES = [
     file: 'projects/large-format-sculpture.html',
     title: 'Case Study: Large-Format 3D Printed Sculpture for a Fine Artist | 3D Print Live',
     description: 'How 3D Print Live helped an oil painter with no 3D modeling experience turn a sculpture idea into a large-format 3D printed statue.',
-    ogImage: '/images/statue.jpg',
+    ogImage: '/images/statue-finished.jpg',
     jsonLd: { '@context': 'https://schema.org', '@graph': [crumbs.ld] },
     body: `    <section class="page-hero">
       <div class="container page-hero-grid">
@@ -453,7 +453,7 @@ const PAGES = [
           <h1>A large-format sculpture for a fine artist</h1>
           <p class="lead">An oil painter by trade, not a 3D modeler, came to us with a sculpture idea. We guided them through the whole process and printed it at large scale.</p>
         </div>
-        <figure><img src="/images/statue.jpg" alt="Large 3D printed white figure sculpture being assembled in the workshop" width="1000" height="1333" fetchpriority="high" /></figure>
+        <figure class="natural"><img src="/images/statue-finished.jpg" alt="Finished large-format 3D printed sculpture of a bearded figure with a hammer and chisel, rising from a stone block" width="950" height="1200" fetchpriority="high" /></figure>
       </div>
     </section>
 
