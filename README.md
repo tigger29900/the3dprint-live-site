@@ -1,4 +1,4 @@
-# The 3D Print Live — Website
+# 3D Print Live — Website
 
 Static marketing site for [the3dprint.live](https://the3dprint.live): plain HTML/CSS/JS, no build step.
 The code lives on GitHub, and Vercel deploys it automatically on every push.
@@ -10,29 +10,31 @@ The code lives on GitHub, and Vercel deploys it automatically on every push.
 | `index.html` | Home page: hero, services, gallery, process, about, testimonials, FAQ, quote form |
 | `styles.css` | All styling. Brand colors and fonts are the variables at the top |
 | `script.js` | Mobile menu, footer year, "quote sent" confirmation |
-| `images/` | Logo and photos (currently **placeholders**, see below) |
+| `images/` | Project photos, `images/brand/` logos |
 | `404.html` | Custom not-found page (Vercel serves it automatically) |
 | `favicon.svg` | Site icon |
 | `vercel.json` | Security headers, caching, clean URLs |
 | `robots.txt`, `sitemap.xml` | SEO basics |
 
-## Swapping in the real logo, photos, and brand
+## Branding
 
-The hero and gallery use real project photos (`images/*.jpg`). To add or swap one, drop a
-portrait (3:4) photo into `images/` and add a `<figure>` in the gallery section of `index.html`.
+The full brand kit lives in `brand-kit/` (see `brand-kit/README.md` for the rules). It's
+kept in the repo for reference but excluded from deployments via `.vercelignore`.
 
-Everything still marked as a placeholder is designed to be replaced without touching the layout:
+- **Logos** (`images/brand/`): stacked logo only, never a horizontal lockup.
+  `logo-stacked-light.svg` in the hero and 404 page, `logo-stacked-dark.svg` in the dark
+  footer, `logo-mark.svg` (mark only) in the compact sticky header. Stacked logo min width
+  120px; mark min 24px.
+- **Favicons:** `favicon.svg` (brand avatar), `favicon-32.png`, `apple-touch-icon.png`.
+- **Colors** are CSS variables at the top of `styles.css`: Azure `#0A7CFF` / `#0062D1` (text
+  and buttons, passes contrast), Apricot `#FF8A3D`, Ink `#111418`, Light ground `#F4F5F7`.
+  Blue means "already built" and apricot means "printing now".
+- **Font:** Nunito, self-hosted from `fonts/` (SIL Open Font License, `fonts/OFL.txt`); no
+  Google Fonts request.
+- **Tagline:** "Building your idea one layer at a time." (website only, never inside the logo)
 
-| Placeholder | Replace with |
-| --- | --- |
-| `images/logo.svg` (+ `favicon.svg`) | Real logo. If it's a PNG, update the `src` in `index.html` and `404.html` |
-| `images/about.svg` | Workshop or team photo (about 5:4) |
-| Testimonials section in `index.html` | Real customer reviews |
-
-Brand colors and fonts are the variables in the `:root` block at the top of `styles.css`
-(`--brand`, `--ink`, `--font-head`, …). Change them there and the whole site updates.
-
-Tip: export photos as `.jpg` or `.webp` at about 1600px wide max to keep the site fast.
+Still placeholders: `images/about.svg` (workshop or team photo, about 5:4) and the
+testimonials in `index.html`. Real project photos are in `images/*.jpg`.
 
 ## Run locally
 

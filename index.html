@@ -3,27 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The 3D Print Live | Custom 3D Printing, Design & Prototyping</title>
+  <title>3D Print Live | Custom 3D Printing, Design & Prototyping</title>
   <meta name="description" content="Custom 3D printing, CAD design, and rapid prototyping for businesses and makers. Upload your idea, get a fast quote, and receive finished parts." />
   <link rel="canonical" href="https://the3dprint.live/" />
-  <meta property="og:title" content="The 3D Print Live" />
+  <meta property="og:title" content="3D Print Live: Building your idea one layer at a time" />
   <meta property="og:description" content="Custom 3D printing, design, and prototyping. Fast quotes, reliable turnaround." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://the3dprint.live/" />
   <meta property="og:image" content="https://the3dprint.live/images/wedding-card-box.jpg" />
-  <meta name="theme-color" content="#ff5a1f" />
+  <meta name="theme-color" content="#111418" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" />
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preload" href="/fonts/nunito-latin-wght.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/styles.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "The 3D Print Live",
+    "name": "3D Print Live",
+    "slogan": "Building your idea one layer at a time.",
     "url": "https://the3dprint.live/",
-    "logo": "https://the3dprint.live/images/logo.svg",
+    "logo": "https://the3dprint.live/images/brand/social-avatar.jpg",
     "telephone": "+1-914-222-3475",
     "email": "sean@the3dprint.live",
     "description": "Custom 3D printing, CAD design, rapid prototyping, finishing, and small-batch production.",
@@ -36,9 +37,8 @@
 
   <header class="header">
     <div class="container header-inner">
-      <a class="brand" href="/" aria-label="The 3D Print Live home">
-        <img src="/images/logo.svg" alt="" width="40" height="40" />
-        <span>The 3D Print <strong>Live</strong></span>
+      <a class="brand" href="/" aria-label="3D Print Live home">
+        <img src="/images/brand/logo-mark.svg" alt="3D Print Live" width="40" height="45" />
       </a>
       <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">
         <span class="sr-only">Menu</span><span class="bars" aria-hidden="true"></span>
@@ -59,8 +59,8 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">3D Printing · Design · Prototyping</p>
-          <h1>Bring your ideas to life, <span class="accent">layer by layer.</span></h1>
+          <img class="hero-logo" src="/images/brand/logo-stacked-light.svg" alt="3D Print Live" width="335" height="262" fetchpriority="high" />
+          <h1>Building your idea <span class="accent">one layer at a time.</span></h1>
           <p class="lead">From a rough sketch to a finished part, we design, print, and finish custom 3D pieces for businesses, inventors, and makers.</p>
           <div class="cta-row">
             <a href="#quote" class="btn btn-primary">Start Your Project</a>
@@ -157,12 +157,12 @@
     <section id="about" class="section section-alt">
       <div class="container about-grid">
         <figure class="about-media">
-          <img src="/images/about.svg" alt="The 3D Print Live workshop" loading="lazy" width="1000" height="800" />
+          <img src="/images/about.svg" alt="3D Print Live workshop" loading="lazy" width="1000" height="800" />
         </figure>
         <div>
           <p class="eyebrow">About us</p>
           <h2>Local, hands-on, and focused on getting it right</h2>
-          <p>The 3D Print Live is a custom 3D printing and design studio. We work directly with you, so you always know who is handling your project, and we don't call a part done until it fits and works.</p>
+          <p>3D Print Live is a custom 3D printing and design studio. We work directly with you, so you always know who is handling your project, and we don't call a part done until it fits and works.</p>
           <ul class="checks">
             <li>Direct communication, no middlemen</li>
             <li>Help choosing the right material for the job</li>
@@ -216,7 +216,7 @@
         </div>
 
         <form id="quote-form" class="quote-form" action="https://formsubmit.co/sean@the3dprint.live" method="POST" enctype="multipart/form-data">
-          <input type="hidden" name="_subject" value="New Quote Request - The 3D Print Live" />
+          <input type="hidden" name="_subject" value="New Quote Request - 3D Print Live" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_next" value="https://the3dprint.live/?quote=sent#quote" />
@@ -255,14 +255,14 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <a class="brand" href="/"><img src="/images/logo.svg" alt="" width="32" height="32" /><span>The 3D Print <strong>Live</strong></span></a>
+      <a class="footer-logo" href="/"><img src="/images/brand/logo-stacked-dark.svg" alt="3D Print Live" width="335" height="262" loading="lazy" /></a>
       <nav class="footer-nav">
         <a href="#services">Services</a>
         <a href="#work">Our Work</a>
         <a href="#faq">FAQ</a>
         <a href="#quote">Get a Quote</a>
       </nav>
-      <p>© <span id="year"></span> The 3D Print Live. All rights reserved.</p>
+      <p>© <span id="year"></span> 3D Print Live. All rights reserved.</p>
     </div>
   </footer>
 

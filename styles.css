@@ -1,21 +1,36 @@
+/* Nunito (SIL Open Font License, see fonts/OFL.txt), self-hosted variable font */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 1000;
+  src: url("/fonts/nunito-latin-wght.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* ==========================================================================
-   Brand tokens: swap these to match the3dprint.live once we have it.
+   Brand tokens (from brand-kit/README.md). Blue = what's already built,
+   apricot = what's being printed right now. Keep that meaning.
    ========================================================================== */
 :root {
-  --brand: #ff5a1f;          /* primary accent (buttons, highlights) */
-  --brand-dark: #e2440c;
-  --brand-soft: #fff1ea;
-  --ink: #1c1917;            /* headings */
-  --text: #44403c;           /* body text */
-  --muted: #78716c;
+  --brand: #0062D1;          /* Azure (text): buttons/links, passes contrast on light */
+  --brand-dark: #004FA8;
+  --azure: #0A7CFF;          /* Azure: decorative lines, focus rings */
+  --azure-on-dark: #5AA9FF;
+  --apricot: #FF8A3D;        /* the "live" extrusion: rules, highlights */
+  --brand-soft: #E8F2FF;
+  --ink: #111418;            /* text + dark backgrounds */
+  --text: #3A414B;
+  --muted: #6B7280;
   --bg: #ffffff;
-  --bg-alt: #f7f5f3;
-  --line: #e7e5e4;
-  --dark: #1c1917;           /* footer / dark sections */
+  --bg-alt: #F4F5F7;         /* light ground */
+  --line: #E3E6EA;
+  --dashed: #A3A9B3;
+  --dark: #111418;
   --radius: 14px;
-  --shadow: 0 1px 2px rgba(28,25,23,.06), 0 8px 24px rgba(28,25,23,.06);
-  --font-head: "Space Grotesk", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --shadow: 0 1px 2px rgba(17,20,24,.06), 0 8px 24px rgba(17,20,24,.06);
+  --font-head: "Nunito", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -31,7 +46,8 @@ body {
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--brand-dark); }
-h1, h2, h3 { font-family: var(--font-head); color: var(--ink); line-height: 1.15; margin: 0 0 .6rem; }
+h1, h2, h3 { font-family: var(--font-head); font-weight: 800; color: var(--ink); line-height: 1.15; margin: 0 0 .6rem; }
+h1 { font-weight: 900; }
 h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); letter-spacing: -.02em; }
 h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); letter-spacing: -.01em; }
 h3 { font-size: 1.15rem; }
@@ -48,7 +64,7 @@ p { margin: 0 0 1rem; }
   display: inline-flex; align-items: center; justify-content: center;
   gap: .4rem; padding: .85rem 1.4rem;
   border-radius: 999px; border: 2px solid transparent;
-  font: 600 1rem/1 var(--font-body); text-decoration: none; cursor: pointer;
+  font: 700 1rem/1 var(--font-body); text-decoration: none; cursor: pointer;
   transition: background .15s, color .15s, border-color .15s, transform .15s;
 }
 .btn:hover { transform: translateY(-1px); }
@@ -67,8 +83,8 @@ p { margin: 0 0 1rem; }
   border-bottom: 1px solid var(--line);
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-.brand { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--ink); font-family: var(--font-head); font-size: 1.15rem; }
-.brand strong { color: var(--brand); }
+.brand { display: inline-flex; align-items: center; }
+.brand img { height: 50px; width: auto; }
 .nav { display: flex; align-items: center; gap: 1.6rem; }
 .nav a:not(.btn) { color: var(--text); text-decoration: none; font-weight: 500; }
 .nav a:not(.btn):hover { color: var(--brand-dark); }
@@ -85,7 +101,20 @@ p { margin: 0 0 1rem; }
 .hero { padding: clamp(3rem, 7vw, 6rem) 0; background: linear-gradient(180deg, var(--brand-soft), var(--bg)); }
 .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .eyebrow { font-weight: 600; font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; color: var(--brand-dark); margin-bottom: .8rem; }
-.accent { color: var(--brand); }
+.accent {
+  color: var(--brand);
+  /* apricot "being printed" underline, echoing the logo's rule */
+  text-decoration: underline var(--apricot);
+  text-decoration-thickness: .12em;
+  text-underline-offset: .14em;
+  text-decoration-skip-ink: none;
+}
+.hero-logo {
+  --logo-w: clamp(160px, 20vw, 220px);
+  width: var(--logo-w); height: auto;
+  /* the SVG has built-in clear space; pull its left edge in line with the headline */
+  margin: 0 0 1.5rem calc(var(--logo-w) * -0.075);
+}
 .lead { font-size: 1.15rem; max-width: 52ch; }
 .cta-row { display: flex; flex-wrap: wrap; gap: .8rem; margin: 1.8rem 0 2.2rem; }
 .stats { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 2rem; }
@@ -102,7 +131,7 @@ p { margin: 0 0 1rem; }
 
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; }
 .card { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); transition: transform .2s, border-color .2s; }
-.card:hover { transform: translateY(-3px); border-color: var(--brand); }
+.card:hover { transform: translateY(-3px); border-color: var(--azure); }
 .card p { margin: 0; }
 .icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px; background: var(--brand-soft); font-size: 1.4rem; margin-bottom: 1rem; }
 
@@ -140,18 +169,18 @@ p { margin: 0 0 1rem; }
 details { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: .75rem; }
 summary { cursor: pointer; list-style: none; padding: 1.1rem 1.3rem; font-weight: 600; color: var(--ink); display: flex; justify-content: space-between; gap: 1rem; }
 summary::-webkit-details-marker { display: none; }
-summary::after { content: "+"; font-size: 1.4rem; line-height: 1; color: var(--brand); transition: transform .2s; }
+summary::after { content: "+"; font-size: 1.4rem; line-height: 1; color: var(--apricot); transition: transform .2s; }
 details[open] summary::after { transform: rotate(45deg); }
 details p { padding: 0 1.3rem 1.1rem; margin: 0; }
 
 /* Quote form */
-.quote { background: var(--dark); color: #d6d3d1; }
+.quote { background: var(--dark); color: #C9CED6; }
 .quote h2 { color: #fff; }
-.quote .eyebrow { color: var(--brand); }
+.quote .eyebrow { color: var(--apricot); }
 .quote-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
 .contact-list { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: .7rem; }
 .contact-list a { color: #fff; text-decoration: none; font-weight: 500; }
-.contact-list a:hover { color: var(--brand); }
+.contact-list a:hover { color: var(--azure-on-dark); }
 .quote-form { background: var(--bg); color: var(--text); border-radius: 20px; padding: clamp(1.25rem, 3vw, 2rem); box-shadow: 0 20px 50px rgba(0,0,0,.3); }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; }
 label { display: grid; gap: .35rem; font-weight: 600; font-size: .92rem; color: var(--ink); margin-bottom: 1rem; }
@@ -160,19 +189,19 @@ input, select, textarea {
   width: 100%; font: inherit; font-weight: 400; color: var(--ink);
   padding: .7rem .85rem; border: 1px solid var(--line); border-radius: 10px; background: #fff;
 }
-input:focus, select:focus, textarea:focus { outline: 2px solid var(--brand); outline-offset: 1px; border-color: transparent; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--azure); outline-offset: 1px; border-color: transparent; }
 input[type="file"] { padding: .55rem; background: var(--bg-alt); }
 textarea { resize: vertical; }
 .hp { position: absolute; left: -9999px; }
 .notice { background: #ecfdf5; border: 1px solid #10b981; color: #065f46; border-radius: 10px; padding: .8rem 1rem; }
 
 /* Footer */
-.footer { background: #0f0d0c; color: #a8a29e; padding: 2.5rem 0; }
+.footer { background: var(--dark); color: #A3A9B3; padding: 2.5rem 0; }
 .footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem; }
-.footer .brand { color: #fff; }
+.footer-logo img { width: 140px; height: auto; display: block; }
 .footer-nav { display: flex; flex-wrap: wrap; gap: 1.4rem; }
-.footer-nav a { color: #d6d3d1; text-decoration: none; }
-.footer-nav a:hover { color: var(--brand); }
+.footer-nav a { color: #E3E6EA; text-decoration: none; }
+.footer-nav a:hover { color: var(--azure-on-dark); }
 .footer p { margin: 0; font-size: .9rem; width: 100%; }
 
 /* Responsive --------------------------------------------------------------- */
