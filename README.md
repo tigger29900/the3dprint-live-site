@@ -33,8 +33,8 @@ kept in the repo for reference but excluded from deployments via `.vercelignore`
   Google Fonts request.
 - **Tagline:** "Building your idea one layer at a time." (website only, never inside the logo)
 
-Still placeholders: `images/about.svg` (workshop or team photo, about 5:4) and the
-testimonials in `index.html`. Real project photos are in `images/*.jpg`.
+Still a placeholder: `images/about.svg` (workshop or team photo, about 5:4).
+Real project photos are in `images/*.jpg`; customer testimonials are in the Testimonials section of `index.html`.
 
 ## Run locally
 
