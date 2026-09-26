@@ -389,7 +389,7 @@ const PAGES = [
           <h2>How it works</h2>
           <ol>
             <li><strong>Tell us about the event:</strong> the date, names or text, colors, and any inspiration photos.</li>
-            <li><strong>We design it:</strong> and share the design with you before printing.</li>
+            <li><strong>We design it:</strong> and share the design with you to confirm accuracy before anything is printed.</li>
             <li><strong>Print and finish:</strong> multi-color printing lets names and designs stand out.</li>
             <li><strong>Pick up or ship:</strong> local pickup or shipping anywhere in the US.</li>
           </ol>`,
@@ -429,7 +429,6 @@ const PAGES = [
     faq: [
       ['What size objects can you scan?', 'Tell us the approximate size and shape of the object in your quote request and we will confirm the best approach.'],
       ['What do I get?', 'A digital 3D model of your object. We can also modify it or print it for you.'],
-      ['Do I need to bring the object to you?', 'Local pickup and drop-off can be arranged in Westchester, the Hudson Valley, and NYC. Get in touch and we will work out the details.'],
     ],
     ctaTitle: 'Have something to scan?',
   }),
