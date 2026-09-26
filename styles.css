@@ -155,7 +155,7 @@ p { margin: 0 0 1rem; }
 /* About */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .about-media { margin: 0; }
-.about-media img { border-radius: 24px; box-shadow: var(--shadow); aspect-ratio: 5 / 4; object-fit: cover; width: 100%; }
+.about-media img { border-radius: 24px; box-shadow: var(--shadow); aspect-ratio: 16 / 10; object-fit: cover; width: 100%; }
 .checks { list-style: none; padding: 0; margin: 1.2rem 0 0; display: grid; gap: .6rem; }
 .checks li { padding-left: 1.9rem; position: relative; }
 .checks li::before { content: "✓"; position: absolute; left: 0; top: 0; width: 1.3rem; height: 1.3rem; border-radius: 50%; background: var(--brand); color: #fff; font-size: .8rem; display: grid; place-items: center; margin-top: .2rem; }
