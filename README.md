@@ -49,7 +49,7 @@ kept in the repo for reference but excluded from deployments via `.vercelignore`
   Blue means "already built" and apricot means "printing now".
 - **Font:** Nunito, self-hosted from `fonts/` (SIL Open Font License, `fonts/OFL.txt`); no
   Google Fonts request.
-- **Tagline:** "Building your idea one layer at a time." (website only, never inside the logo)
+- **Tagline:** "Building Your Idea One Layer At A Time" (title case) (website only, never inside the logo)
 
 Real project photos are in `images/*.jpg`; customer testimonials are in the Testimonials section of `index.html`.
 
