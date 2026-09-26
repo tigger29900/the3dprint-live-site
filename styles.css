@@ -206,6 +206,7 @@ textarea { resize: vertical; }
 .footer-nav a { color: #E3E6EA; text-decoration: none; }
 .footer-nav a:hover { color: var(--azure-on-dark); }
 .footer p { margin: 0; font-size: .9rem; width: 100%; }
+.footer p.footer-area { color: #E3E6EA; font-weight: 600; margin-bottom: -.6rem; }
 
 /* Responsive --------------------------------------------------------------- */
 @media (max-width: 960px) {
