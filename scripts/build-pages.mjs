@@ -466,6 +466,10 @@ const PAGES = [
           <p>Turning an artist's vision into a printable digital sculpture, and producing it at a size larger than a single print.</p>
           <h2>What we did</h2>
           ${checks(['Walked the artist through each step of the process, from model to finished piece', 'Prepared the digital sculpture for printing', 'Printed the figure in sections at large scale', 'Assembled the sections into a single statue'])}
+          <figure class="inline-figure">
+            <img src="/images/statue-in-progress.jpg" alt="The sculpture mid-assembly on the workbench: the printed body with a separately printed arm section waiting to be attached" width="1000" height="1333" loading="lazy" />
+            <figcaption><strong>Behind the build:</strong> printed sections on the workbench, mid-assembly.</figcaption>
+          </figure>
           <h2>The result</h2>
           <p>A large-format statue the artist was happy with, and a process they could follow without needing to learn 3D modeling themselves.</p>
         </div>

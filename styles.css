@@ -230,6 +230,9 @@ textarea { resize: vertical; }
 .prose h2:first-child { margin-top: 0; }
 .prose ol { padding-left: 1.2rem; display: grid; gap: .5rem; }
 .prose ol li::marker { color: var(--brand); font-weight: 800; }
+.inline-figure { margin: 1.5rem 0 0; max-width: 420px; }
+.inline-figure img { border-radius: var(--radius); width: 100%; aspect-ratio: 3 / 4; object-fit: cover; box-shadow: var(--shadow); }
+.inline-figure figcaption { font-size: .9rem; color: var(--muted); margin-top: .6rem; }
 .photo-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0 0; }
 .photo-pair img { border-radius: var(--radius); aspect-ratio: 3 / 4; object-fit: cover; width: 100%; }
 .aside-stack { display: grid; gap: 1.25rem; position: sticky; top: 96px; }
